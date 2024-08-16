@@ -1,0 +1,80 @@
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.chartsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(2, auto); 
+    gap: 30px;
+    padding: 0px 20px;
+}
+
+.chartReports {
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 5px; 
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chartReports h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+.topClients {
+    grid-column: span 2; 
+    grid-row: span 1; 
+}
+
+.topProducts {
+    grid-column: span 2; 
+    grid-row: span 1; 
+}
+
+.topSales {
+    grid-column: span 2; 
+    grid-row: span 2; 
+}
+
+@media (max-width: 1200px) {
+    .chartsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .topClients, .topProducts, .topSales {
+        grid-column: span 2; 
+    }
+}
+
+@media (max-width: 768px) {
+    .chartsContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .topClients, .topProducts, .topSales {
+        grid-column: span 1; 
+    }
+}
+
+@media (max-width: 1200px) {
+    .cardContainer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}

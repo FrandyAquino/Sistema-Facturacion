@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-areas:
+        "navbar navbar"
+        "sidebar content";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 55px 1fr;
+    height: 100vh; 
+}
+
+.content {
+    grid-area: content;
+    background-color: rgba(238, 238, 243, 0.596);
+    padding: 20px 10px;
+    overflow-y: auto; 
+}
+

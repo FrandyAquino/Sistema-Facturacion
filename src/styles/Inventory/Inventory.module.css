@@ -1,0 +1,13 @@
+.inventoryContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.inventoryTable{
+    margin-top: 40px;
+}
+
+.inventoryTable h1{
+    font-size: 20px;
+    padding-bottom: 10px;
+}

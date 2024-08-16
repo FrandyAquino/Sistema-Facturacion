@@ -1,0 +1,13 @@
+.salesContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.salesTable{
+    margin-top: 40px;
+}
+
+.salesTable h1{
+    font-size: 20px;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.employeesContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.employeesTable{
+    margin-top: 40px;
+}
+
+.employeesTable h1{
+    font-size: 20px;
+    padding-bottom: 10px;
+}

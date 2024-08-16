@@ -1,0 +1,36 @@
+/* src/components/NotFound.module.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.title {
+    font-size: 10rem;
+    color: #343a40;
+    margin: 0;
+}
+
+.message {
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+
+.homeLink {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #555555;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.homeLink:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,35 @@
+.navbar {
+    grid-area: cristian;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5; 
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 20px;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 200px; 
+    right: 0;
+    z-index: 1001; 
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 15px;
+    
+}
+
+.searchContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.userContainer {
+    display: flex;
+    align-items: center;
+}
+
+.userIcon {
+    color: #aaa;
+    font-size: 24px;
+    margin-right: 10px;
+}
+

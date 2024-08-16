@@ -1,0 +1,33 @@
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    padding: 1rem;
+}
+
+.breadcrumbItem {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    color: #007bff;
+}
+
+.breadcrumbItem+.breadcrumbItem::before {
+    content: ">";
+    margin-right: 0.5rem;
+    color: #6c757d;
+}
+
+.breadcrumbLink {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.breadcrumbLink:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.breadcrumbItemActive {
+    color: #6c757d;
+    cursor: default;
+}

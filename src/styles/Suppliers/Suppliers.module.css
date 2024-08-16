@@ -1,0 +1,13 @@
+.suppliersContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.suppliersTable{
+    margin-top: 40px;
+}
+
+.suppliersTable h1{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
