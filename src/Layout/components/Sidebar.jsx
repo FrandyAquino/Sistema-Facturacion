@@ -1,10 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from '@styles/MainLayout/Sidebar.module.css'
-import { FaTachometerAlt, FaUsers, FaBox, FaTruck, FaFileAlt, FaUserTie, FaSignOutAlt, FaMoneyBill } from 'react-icons/fa'
+import { FaTachometerAlt, FaUsers, FaBox, FaTruck, FaUserTie, FaSignOutAlt, FaMoneyBill } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { supabase } from '../../database/databaseAuth'
-import { useEffect } from 'react'
+import { supabase } from '@database/databaseAuth'
 
 
 function Sidebar() {

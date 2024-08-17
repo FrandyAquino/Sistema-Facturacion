@@ -16,6 +16,7 @@
     flex-direction: column;
 }
 
+
 .sidebarHeader {
     padding: 14px 25px;
     font-size: 24px;
@@ -111,4 +112,14 @@
 
 .subMenu .subMenuLink:active {
     background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Add specific styles if needed */
 }
