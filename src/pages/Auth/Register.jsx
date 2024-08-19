@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { supabase } from '@database/databaseAuth';
 import styles from '@styles/components/Register.module.css';
 import { useNavigate } from 'react-router-dom';
@@ -8,15 +7,20 @@ const Register = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const result = await supabase.auth.signUp({
+            const { error } = await supabase.auth.signUp({
                 email,
                 password
             });
-            console.log(result);
+            if (!error) {
+                setShowModal(true);
+            } else {
+                console.log('Error: ', error.message);
+            }
         } catch (error) {
             console.log('Error: ', error.message);
         }
@@ -24,6 +28,11 @@ const Register = () => {
 
     const handleLogin = () => {
         navigate('/login');
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+        navigate('/login'); 
     };
 
     return (
@@ -52,6 +61,16 @@ const Register = () => {
                 <button type="submit" className={styles.button}>Register</button>
                 <p className={styles.pLogin} onClick={handleLogin}>¿Ya tienes una cuenta? Inicia Sesión</p>
             </form>
+
+            {showModal && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modal}>
+                        <h3>¡Registro Exitoso!</h3>
+                        <p>Por favor, confirma tu email revisando tu bandeja de entrada.</p>
+                        <button className={styles.modalButton} onClick={closeModal}>Aceptar</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
