@@ -20,7 +20,7 @@ function Sales() {
     <MainLayout>
       <div className={styles.salesContainer}>
         <InputSearch
-          placeholder="NO SE IMPLEMENTÓ"
+          placeholder="TRABAJANDO EN EL FILTRO"
         />
         <Buttons title="Registrar Venta" onClick={handleAddVentas} />
       </div>

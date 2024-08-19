@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, { useContext } from 'react'
 import MainLayout from '@Layout/MainLayout';
 import styles from '@styles/Suppliers/Suppliers.module.css';
 import InputSearch from '@components/InputSearch';
@@ -9,21 +9,7 @@ import SuppliersContext from '@context/SuppliersContext';
 
 function Suppliers() {
     const navigate = useNavigate();
-    const { suppliers } = useContext(SuppliersContext);
-    const [searchTerm, setSearchTerm] = useState('');
-    const [filteredSuppliers, setFilteredSuppliers] = useState(suppliers);
-
-    useEffect(() => {
-        const results = suppliers.filter(supplier =>
-            supplier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            supplier.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            supplier.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            supplier.balance.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-            supplier.created_at.toString().toLowerCase().includes(searchTerm.toLowerCase()) ||
-            supplier.phone.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredSuppliers(results);
-    }, [searchTerm, suppliers]);
+    const { filteredSuppliers, setSearchTerm } = useContext(SuppliersContext);
 
     const handleAddSuppliers = () => {
         navigate('/suppliers/addSuppliers');
@@ -32,10 +18,9 @@ function Suppliers() {
     return (
         <MainLayout>
             <div className={styles.suppliersContainer}>
-                <InputSearch 
-                placeholder="Buscar Proveedores"
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
+                <InputSearch
+                    placeholder="Buscar Proveedores"
+                    setSearchTerm={setSearchTerm}
                 />
                 <Buttons title="Añadir Proveedores" onClick={handleAddSuppliers} />
             </div>
