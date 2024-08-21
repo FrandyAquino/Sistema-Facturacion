@@ -19,6 +19,7 @@ import AddSuppliers from '@pages/Suppliers/AddSuppliers';
 import AddEmployees from '@pages/Employees/AddEmployees';
 import { SalesProvider } from "@context/SalesContext";
 import AddSales from '@pages/Sales/AddSales.jsx';
+import Receipt from '@components/Receipt';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/sales/addSales" element={<ProtectedRoute><AddSales /></ProtectedRoute>} />
                 <Route path="/employees" element={<ProtectedRoute><Employees /></ProtectedRoute>} />
                 <Route path="/employees/addEmployees" element={<ProtectedRoute><AddEmployees /></ProtectedRoute>} />
+                <Route path="/Receipt" element={<ProtectedRoute><Receipt /></ProtectedRoute>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
               </Routes>
