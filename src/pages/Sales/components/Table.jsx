@@ -66,7 +66,8 @@ function Table({ data }) {
         {
             name: 'Acción',
             cell: row => (
-                <button onClick={() => handleViewReceipt(row)} className="btn btn-primary">
+                <button onClick={() => handleViewReceipt(row)} style={{ backgroundColor: "#555555", color: 'white', 
+                padding: '5px', border: "none", borderRadius: "25px", fontSize:"12px", cursor:"pointer" }}>
                     Ver Recibo
                 </button>
             ),
