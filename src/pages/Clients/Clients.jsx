@@ -11,8 +11,6 @@ function Clients() {
     const navigate = useNavigate();
     const { filteredClients, setSearchTerm } = useContext(ClientsContext);
 
-
-
     const handleAddClient = () => {
         navigate('/clients/addClient');
     };

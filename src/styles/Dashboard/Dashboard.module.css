@@ -53,6 +53,9 @@
     .chartsContainer {
         grid-template-columns: repeat(2, 1fr);
     }
+    .cardContainer {
+        grid-template-columns: repeat(2, 1fr); 
+    }
     .topClients, .topProducts, .topSales {
         grid-column: span 2; 
     }
@@ -62,19 +65,10 @@
     .chartsContainer {
         grid-template-columns: repeat(1, 1fr);
     }
-    .topClients, .topProducts, .topSales {
-        grid-column: span 1; 
-    }
-}
-
-@media (max-width: 1200px) {
-    .cardContainer {
-        grid-template-columns: repeat(2, 1fr); 
-    }
-}
-
-@media (max-width: 768px) {
     .cardContainer {
         grid-template-columns: repeat(1, 1fr); 
+    }
+    .topClients, .topProducts, .topSales {
+        grid-column: span 1; 
     }
 }

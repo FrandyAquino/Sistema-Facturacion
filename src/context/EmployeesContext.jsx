@@ -15,7 +15,6 @@ export const EmployeesProvider = ({ children }) => {
         };
         fetchEmployees();
     }, []);
-
     
     useEffect(() => {
         const results = employees.filter(employee =>
@@ -35,3 +34,4 @@ export const EmployeesProvider = ({ children }) => {
 };
 
 export default EmployeesContext;
+

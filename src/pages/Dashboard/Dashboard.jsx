@@ -22,9 +22,9 @@ function Dashboard() {
         <MainLayout>
             <div className={styles.cardContainer}>
                 <Cards total={totalSales} title="Total ventas" imgUrl="https://www.tpc.nl/en/content/items/1812/media/d83a46063d5a.png"/>
-                <Cards total={inventory.length} title="Total Productos" imgUrl="https://www.tpc.nl/en/content/items/1813/media/b9d0dcdf616a.png" />
-                <Cards total={clients.length} title="Total Clientes" imgUrl="https://www.tpc.nl/en/content/items/1910/media/e4e1373b7cd9.png"/>
-                <Cards total={suppliers.length} title="Total Proveedores" imgUrl="https://www.tpc.nl/en/content/items/1812/media/dcc032479881.png"/>
+                <Cards total={inventory.length} title="Productos" imgUrl="https://www.tpc.nl/en/content/items/1813/media/b9d0dcdf616a.png" />
+                <Cards total={clients.length} title="Clientes" imgUrl="https://www.tpc.nl/en/content/items/1910/media/e4e1373b7cd9.png"/>
+                <Cards total={suppliers.length} title="Proveedores" imgUrl="https://www.tpc.nl/en/content/items/1812/media/dcc032479881.png"/>
             </div>
             <div className={styles.reportsContainer}>
                 <div className={styles.chartsContainer}>

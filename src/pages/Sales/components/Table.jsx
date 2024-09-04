@@ -137,6 +137,7 @@ function Table({ data }) {
                 highlightOnHover
                 selectableRows
                 noHeader
+                responsive
             />
         </div>
     );

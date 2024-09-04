@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { supabase } from '@database/databaseAuth.ts'; 
+import { supabase } from '@database/databaseAuth'; 
 import ClientsContext from '@context/ClientsContext';
 import InventoryContext from '@context/InventoryContext';
 import styles from '@styles/components/Forms.module.css';
@@ -41,20 +41,43 @@ function SalesForm() {
 
         console.log('Total Price:', totalPrice); 
 
-        const { error } = await supabase
+        // Primero, inserta la venta
+        const { error: saleError } = await supabase
             .from('Sales')
             .insert([{ client_id: selectedClient, item_id: selectedProduct, quantity, total_price: totalPrice }]);
 
-        if (error) {
-            console.error('Error inserting sale:', error);
+        if (saleError) {
+            console.error('Error inserting sale:', saleError);
             alert('Ocurrió un error al registrar la venta. Por favor, inténtelo de nuevo.');
-        } else {
-            alert('¡Venta registrada exitosamente!');
-            setSelectedClient('');
-            setSelectedProduct('');
-            setQuantity(1);
-            setTotalPrice(0);
+            return;
         }
+
+        // Luego, actualiza la cantidad del producto en el inventario
+        const product = inventory.find(item => item.item_id === Number(selectedProduct));
+        if (product) {
+            const newQuantity = product.quantity - quantity;
+            if (newQuantity < 0) {
+                alert('La cantidad solicitada excede el inventario disponible.');
+                return;
+            }
+
+            const { error: inventoryError } = await supabase
+                .from('Inventory')
+                .update({ quantity: newQuantity })
+                .eq('item_id', selectedProduct);
+
+            if (inventoryError) {
+                console.error('Error updating inventory:', inventoryError);
+                alert('Ocurrió un error al actualizar el inventario. Por favor, inténtelo de nuevo.');
+                return;
+            }
+        }
+
+        alert('¡Venta registrada exitosamente!');
+        setSelectedClient('');
+        setSelectedProduct('');
+        setQuantity(1);
+        setTotalPrice(0);
     };
 
     return (
